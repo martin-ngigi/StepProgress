@@ -4,15 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
     tools:context=".MainActivity">
 
-    <TextView
+    <com.funrisestudio.stepprogress.StepProgressView
+        android:id="@+id/vStepProgress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:arcPadding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:nodeHeight="50dp"
+        app:stepsCount="4"
+        app:textNodeColor="@color/colorAccent"
+        app:textNodeSize="18sp"
+        app:textNodeTitleColor="@color/colorPrimary"
+        app:textNodeTitleSize="14sp"
+        app:textTitlePadding="5dp"
+        app:titlesEnabled="true" />
+
+    <Button
+        android:id="@+id/undoneBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Mark UnDone"
+        android:layout_margin="2dp"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/doneBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vStepProgress" />
+
+    <Button
+        android:id="@+id/doneBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Mark Done"
+        android:layout_margin="2dp"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/undoneBtn"
+        app:layout_constraintEnd_toStartOf="@+id/nextBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/undoneBtn"
+        app:layout_constraintTop_toTopOf="@+id/undoneBtn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/nextBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:layout_margin="2dp"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/doneBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/doneBtn"
+        app:layout_constraintTop_toTopOf="@+id/doneBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
